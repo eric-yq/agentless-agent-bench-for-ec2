@@ -126,7 +126,12 @@
       "/var/log/mailman",
       "/var/spool/mailman",
       "/var/lock/mailman",
-      "/var/run/mailman"
+      "/var/run/mailman",
+      "/etc/passwd",
+      "/etc/shadow",
+      "/etc/group",
+      "/etc/gshadow",
+      "/var/mail"
     ]
   },
   {
