@@ -79,11 +79,11 @@ services:
     image: local/fix-code-vulnerability
     mem_limit: 2048m
     volumes: ["./tasks/fix-code-vulnerability:/solution:ro"]
-  fix-git:
-    <<: *defaults
-    image: local/fix-git
-    mem_limit: 2048m
-    volumes: ["./tasks/fix-git:/solution:ro"]
+#  fix-git:
+#    <<: *defaults
+#    image: local/fix-git
+#    mem_limit: 2048m
+#    volumes: ["./tasks/fix-git:/solution:ro"]
   git-leak-recovery:
     <<: *defaults
     image: local/git-leak-recovery
