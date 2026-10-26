@@ -9,7 +9,20 @@ This is built on terminal-bench-2.1 task dataset using the `oracle` solutions, w
 Every benchmark run executes the task's terminal-bench 2.1 verifier right after the oracle `solve.sh`; a run only counts as completed if the verifier passes. The oracle and verifiers are vendored into `tasks/<name>/env/tests/` with their python deps baked into the image at build time, so verification adds no network IO.
 
 ### Preparation
+
 ```bash
+apt install -y docker.io
+mkdir -p ~/.docker/cli-plugins
+curl -SL "https://github.com/docker/compose/releases/latest/download/docker-compose-linux-$(uname -m)" \
+  -o ~/.docker/cli-plugins/docker-compose
+chmod +x ~/.docker/cli-plugins/docker-compose
+docker compose version
+```
+Install docker `docker` and `docker-compose`.
+
+```bash
+cd ~
+git clone https://github.com/eric-yq/agentless-agent-bench-for-ec2.git
 uv run main.py build
 ```
 Build all the task images in parallel for the current native platform (override native platform by setting env var `PLATFORM=linux/arm64` or passing `--platform linux/arm64`). 
