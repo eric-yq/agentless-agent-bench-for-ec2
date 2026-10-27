@@ -11,6 +11,9 @@ Every benchmark run executes the task's terminal-bench 2.1 verifier right after 
 ### Preparation
 
 ```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+source /root/.local/bin/env
+
 apt install -y docker.io
 mkdir -p ~/.docker/cli-plugins
 curl -SL "https://github.com/docker/compose/releases/latest/download/docker-compose-linux-$(uname -m)" \
@@ -23,6 +26,7 @@ Install docker `docker` and `docker-compose`.
 ```bash
 cd ~
 git clone https://github.com/eric-yq/agentless-agent-bench-for-ec2.git
+cd gentless-agent-bench-for-ec2
 uv run main.py build
 ```
 Build all the task images in parallel for the current native platform (override native platform by setting env var `PLATFORM=linux/arm64` or passing `--platform linux/arm64`). 
